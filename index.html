@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>For You</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
         <style>
             body {
                 background-color: #f0e6f6;
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Chelsea Market', sans-serif;
                 text-align: center;
                 padding: 50px;
             }
@@ -37,6 +37,10 @@
             button:hover {
                 background-color: #ff1493;
             }
+
+            #output {
+                transition: opacity 0.3s ease;
+            }
         </style>
     </head>
     <body>
@@ -47,28 +51,39 @@
          <p id="output"></p>
 
             <script>
+                function changeText(message)
+                {
+                    let output = document.getElementById("output");
+                    output.style.opacity = 0;
+                    setTimeout(() => {
+                        output.innerHTML = message;
+                        output.style.opacity = 1;
+                    }, 300);
+                }
+
                 function sayHi() {
                     let name = document.getElementById("nameInput").value;
                     let output = document.getElementById("output");
                     if (name === "Jaleel") {
-                     output.innerHTML = "Wrong name silly :P"
+                     changeText("Wrong name silly :P");
                     } else if (name === "jaleel") {
-                     output.innerHTML = "Wrong name silly :P"
+                     changeText("Wrong name silly :P");
                     } else if (name === "Leelee") {
-                    output.innerHTML = "Hi " +  name + "! " + "I made this for you <3"
+                    changeText("Hi " +  name + "! " + "I made this for you <3");
                     } else if (name === "leelee") {
-                    output.innerHTML = "Hi " +  name + "! " + "I made this for you <3"
+                    changeText("Hi " +  name + "! " + "I made this for you <3");
                     } else if (name === "Colliana") {
-                    output.innerHTML = "That's me!"
-                    } else if (name === "colliana") {
-                    output.innerHTML = "That's me!"
-                    } else if (name === "Lia") {
-                    output.innerHTML = "That's me!"
+                    changeText("That's me!");
                     } else if (name === "lia") {
-                    output.innerHTML = "That's me!"
-                    } else { 
-                    output.innerHTML = "I don't think I know you, but hi " + name + "!"}
+                    changeText("That's me!");
+                    } else if (name === "Lia") {
+                    changeText("That's me!");
+                    } else if (name === "Colliana") {
+                    changeText("That's me!");
+                    } else {
+                    changeText("I don't think I know you, but hi " + name + "!");
                     }
+                }
             </script>
             <img src="chiikawa-usagi.webp" alt="Usagii" id="usagii" style="width: 200px; margin-top: 20px;">
             <script>
